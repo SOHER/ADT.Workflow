@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="workflowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="workflowModelStoreContainer">
+          <EntitySet Name="ARTICLE" EntityType="workflowModel.Store.ARTICLE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ARTICLE_IMG_LINE" EntityType="workflowModel.Store.ARTICLE_IMG_LINE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ARTICLE_THEME_LINE" EntityType="workflowModel.Store.ARTICLE_THEME_LINE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ARTICLE_VIDEO_LINE" EntityType="workflowModel.Store.ARTICLE_VIDEO_LINE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FILE" EntityType="workflowModel.Store.FILE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FILE_TYPE" EntityType="workflowModel.Store.FILE_TYPE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FUNCTION" EntityType="workflowModel.Store.FUNCTION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HISTORIC" EntityType="workflowModel.Store.HISTORIC" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IMG" EntityType="workflowModel.Store.IMG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PERSON" EntityType="workflowModel.Store.PERSON" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ROLE" EntityType="workflowModel.Store.ROLE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STATUS" EntityType="workflowModel.Store.STATUS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TEAM" EntityType="workflowModel.Store.TEAM" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="THEME" EntityType="workflowModel.Store.THEME" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VIDEO" EntityType="workflowModel.Store.VIDEO" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ARTICLE__ILLUSTRAT_ARTICLE" Association="workflowModel.Store.FK_ARTICLE__ILLUSTRAT_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="ARTICLE_IMG_LINE" EntitySet="ARTICLE_IMG_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICLE__ILLUSTRAT_IMG" Association="workflowModel.Store.FK_ARTICLE__ILLUSTRAT_IMG">
+            <End Role="IMG" EntitySet="IMG" />
+            <End Role="ARTICLE_IMG_LINE" EntitySet="ARTICLE_IMG_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICLE__INCLUDE_ARTICLE" Association="workflowModel.Store.FK_ARTICLE__INCLUDE_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="ARTICLE_VIDEO_LINE" EntitySet="ARTICLE_VIDEO_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICLE__INCLUDE2_VIDEO" Association="workflowModel.Store.FK_ARTICLE__INCLUDE2_VIDEO">
+            <End Role="VIDEO" EntitySet="VIDEO" />
+            <End Role="ARTICLE_VIDEO_LINE" EntitySet="ARTICLE_VIDEO_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICLE__POSSESS_ARTICLE" Association="workflowModel.Store.FK_ARTICLE__POSSESS_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="ARTICLE_THEME_LINE" EntitySet="ARTICLE_THEME_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICLE__POSSESS2_THEME" Association="workflowModel.Store.FK_ARTICLE__POSSESS2_THEME">
+            <End Role="THEME" EntitySet="THEME" />
+            <End Role="ARTICLE_THEME_LINE" EntitySet="ARTICLE_THEME_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FILE_CONTAIN_FILE_TYP" Association="workflowModel.Store.FK_FILE_CONTAIN_FILE_TYP">
+            <End Role="FILE_TYPE" EntitySet="FILE_TYPE" />
+            <End Role="FILE" EntitySet="FILE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FILE_EXPORT_ARTICLE" Association="workflowModel.Store.FK_FILE_EXPORT_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="FILE" EntitySet="FILE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_PARTICIPA_ARTICLE" Association="workflowModel.Store.FK_HISTORIC_PARTICIPA_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="HISTORIC" EntitySet="HISTORIC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_PARTICIPA_PERSON" Association="workflowModel.Store.FK_HISTORIC_PARTICIPA_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="HISTORIC" EntitySet="HISTORIC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_PARTICIPA_STATUS" Association="workflowModel.Store.FK_HISTORIC_PARTICIPA_STATUS">
+            <End Role="STATUS" EntitySet="STATUS" />
+            <End Role="HISTORIC" EntitySet="HISTORIC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_BELONG_TEAM" Association="workflowModel.Store.FK_PERSON_BELONG_TEAM">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_HAVE_FUNCTION" Association="workflowModel.Store.FK_PERSON_HAVE_FUNCTION">
+            <End Role="FUNCTION" EntitySet="FUNCTION" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_HOLD_ROLE" Association="workflowModel.Store.FK_PERSON_HOLD_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ARTICLE">
+          <Key>
+            <PropertyRef Name="ARTICLE_ID" />
+          </Key>
+          <Property Name="ARTICLE_ID" Type="int" Nullable="false" />
+          <Property Name="ARTICLE_NBR" Type="int" Nullable="false" />
+          <Property Name="AUTHOR" Type="text" />
+          <Property Name="SOURCES" Type="text" />
+          <Property Name="ANGLE" Type="text" />
+          <Property Name="TITLE" Type="text" Nullable="false" />
+          <Property Name="TITLE_FB" Type="text" />
+          <Property Name="CHAPO" Type="text" />
+          <Property Name="DESCRIPTION" Type="text" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="datetime" />
+          <Property Name="HISTORIC" Type="text" />
+          <Property Name="MODIFICATION_DATE" Type="datetime" />
+          <Property Name="VALIDATION_DATE" Type="datetime" />
+          <Property Name="TARGET_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ARTICLE_IMG_LINE">
+          <Key>
+            <PropertyRef Name="ARTICLE_ID" />
+            <PropertyRef Name="IMG_ID" />
+          </Key>
+          <Property Name="ARTICLE_ID" Type="int" Nullable="false" />
+          <Property Name="IMG_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARTICLE_THEME_LINE">
+          <Key>
+            <PropertyRef Name="ARTICLE_ID" />
+            <PropertyRef Name="THEME_ID" />
+          </Key>
+          <Property Name="ARTICLE_ID" Type="int" Nullable="false" />
+          <Property Name="THEME_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARTICLE_VIDEO_LINE">
+          <Key>
+            <PropertyRef Name="ARTICLE_ID" />
+            <PropertyRef Name="IMG_ID2" />
+          </Key>
+          <Property Name="ARTICLE_ID" Type="int" Nullable="false" />
+          <Property Name="IMG_ID2" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FILE">
+          <Key>
+            <PropertyRef Name="PDF_ID" />
+          </Key>
+          <Property Name="PDF_ID" Type="int" Nullable="false" />
+          <Property Name="ARTICLE_ID" Type="int" Nullable="false" />
+          <Property Name="FILE_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="PDF_NAME" Type="text" Nullable="false" />
+          <Property Name="PDF_URL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FILE_TYPE">
+          <Key>
+            <PropertyRef Name="FILE_TYPE_ID" />
+          </Key>
+          <Property Name="FILE_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="FILE_TYPE_LABEL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FUNCTION">
+          <Key>
+            <PropertyRef Name="FUNCTION_ID" />
+          </Key>
+          <Property Name="FUNCTION_ID" Type="int" Nullable="false" />
+          <Property Name="FUNCTION_LABEL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HISTORIC">
+          <Key>
+            <PropertyRef Name="PERSON_ID" />
+            <PropertyRef Name="ARTICLE_ID" />
+            <PropertyRef Name="STATUS_ID" />
+          </Key>
+          <Property Name="PERSON_ID" Type="int" Nullable="false" />
+          <Property Name="ARTICLE_ID" Type="int" Nullable="false" />
+          <Property Name="STATUS_ID" Type="int" Nullable="false" />
+          <Property Name="DATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMG">
+          <Key>
+            <PropertyRef Name="IMG_ID" />
+          </Key>
+          <Property Name="IMG_ID" Type="int" Nullable="false" />
+          <Property Name="IMG_ALT" Type="text" Nullable="false" />
+          <Property Name="IMG_NAME" Type="text" Nullable="false" />
+          <Property Name="IMG_CREDITS" Type="text" />
+          <Property Name="IMG_LEGEND" Type="text" />
+          <Property Name="IMG_SRC" Type="text" />
+          <Property Name="IMG_URL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="PERSON_ID" />
+          </Key>
+          <Property Name="PERSON_ID" Type="int" Nullable="false" />
+          <Property Name="ID_TEAM" Type="int" Nullable="false" />
+          <Property Name="ROLE_ID" Type="int" Nullable="false" />
+          <Property Name="FUNCTION_ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="text" Nullable="false" />
+          <Property Name="FIRSTNAME" Type="text" Nullable="false" />
+          <Property Name="MAIL" Type="text" Nullable="false" />
+          <Property Name="PWD" Type="text" Nullable="false" />
+          <Property Name="PHONE" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="int" Nullable="false" />
+          <Property Name="ROLE_LABEL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STATUS">
+          <Key>
+            <PropertyRef Name="STATUS_ID" />
+          </Key>
+          <Property Name="STATUS_ID" Type="int" Nullable="false" />
+          <Property Name="STATUS_LABEL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID_TEAM" />
+          </Key>
+          <Property Name="ID_TEAM" Type="int" Nullable="false" />
+          <Property Name="ROLE_LABEL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THEME">
+          <Key>
+            <PropertyRef Name="THEME_ID" />
+          </Key>
+          <Property Name="THEME_ID" Type="int" Nullable="false" />
+          <Property Name="THEME_LABEL" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VIDEO">
+          <Key>
+            <PropertyRef Name="IMG_ID2" />
+          </Key>
+          <Property Name="IMG_ID2" Type="int" Nullable="false" />
+          <Property Name="VIDEO_ALT" Type="text" Nullable="false" />
+          <Property Name="VIDEO_NAME" Type="text" Nullable="false" />
+          <Property Name="VIDEO_CREDITS" Type="text" />
+          <Property Name="VIDEO_LEGEND" Type="text" />
+          <Property Name="VIDEO_MARKUP" Type="text" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ARTICLE__ILLUSTRAT_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.Store.ARTICLE" Multiplicity="1" />
+          <End Role="ARTICLE_IMG_LINE" Type="workflowModel.Store.ARTICLE_IMG_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="ARTICLE_IMG_LINE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICLE__ILLUSTRAT_IMG">
+          <End Role="IMG" Type="workflowModel.Store.IMG" Multiplicity="1" />
+          <End Role="ARTICLE_IMG_LINE" Type="workflowModel.Store.ARTICLE_IMG_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMG">
+              <PropertyRef Name="IMG_ID" />
+            </Principal>
+            <Dependent Role="ARTICLE_IMG_LINE">
+              <PropertyRef Name="IMG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICLE__INCLUDE_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.Store.ARTICLE" Multiplicity="1" />
+          <End Role="ARTICLE_VIDEO_LINE" Type="workflowModel.Store.ARTICLE_VIDEO_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="ARTICLE_VIDEO_LINE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICLE__INCLUDE2_VIDEO">
+          <End Role="VIDEO" Type="workflowModel.Store.VIDEO" Multiplicity="1" />
+          <End Role="ARTICLE_VIDEO_LINE" Type="workflowModel.Store.ARTICLE_VIDEO_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VIDEO">
+              <PropertyRef Name="IMG_ID2" />
+            </Principal>
+            <Dependent Role="ARTICLE_VIDEO_LINE">
+              <PropertyRef Name="IMG_ID2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICLE__POSSESS_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.Store.ARTICLE" Multiplicity="1" />
+          <End Role="ARTICLE_THEME_LINE" Type="workflowModel.Store.ARTICLE_THEME_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="ARTICLE_THEME_LINE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTICLE__POSSESS2_THEME">
+          <End Role="THEME" Type="workflowModel.Store.THEME" Multiplicity="1" />
+          <End Role="ARTICLE_THEME_LINE" Type="workflowModel.Store.ARTICLE_THEME_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THEME">
+              <PropertyRef Name="THEME_ID" />
+            </Principal>
+            <Dependent Role="ARTICLE_THEME_LINE">
+              <PropertyRef Name="THEME_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FILE_CONTAIN_FILE_TYP">
+          <End Role="FILE_TYPE" Type="workflowModel.Store.FILE_TYPE" Multiplicity="1" />
+          <End Role="FILE" Type="workflowModel.Store.FILE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILE_TYPE">
+              <PropertyRef Name="FILE_TYPE_ID" />
+            </Principal>
+            <Dependent Role="FILE">
+              <PropertyRef Name="FILE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FILE_EXPORT_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.Store.ARTICLE" Multiplicity="1" />
+          <End Role="FILE" Type="workflowModel.Store.FILE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="FILE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_PARTICIPA_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.Store.ARTICLE" Multiplicity="1" />
+          <End Role="HISTORIC" Type="workflowModel.Store.HISTORIC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="HISTORIC">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_PARTICIPA_PERSON">
+          <End Role="PERSON" Type="workflowModel.Store.PERSON" Multiplicity="1" />
+          <End Role="HISTORIC" Type="workflowModel.Store.HISTORIC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="PERSON_ID" />
+            </Principal>
+            <Dependent Role="HISTORIC">
+              <PropertyRef Name="PERSON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_PARTICIPA_STATUS">
+          <End Role="STATUS" Type="workflowModel.Store.STATUS" Multiplicity="1" />
+          <End Role="HISTORIC" Type="workflowModel.Store.HISTORIC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS">
+              <PropertyRef Name="STATUS_ID" />
+            </Principal>
+            <Dependent Role="HISTORIC">
+              <PropertyRef Name="STATUS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_BELONG_TEAM">
+          <End Role="TEAM" Type="workflowModel.Store.TEAM" Multiplicity="1" />
+          <End Role="PERSON" Type="workflowModel.Store.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_TEAM" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="ID_TEAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_HAVE_FUNCTION">
+          <End Role="FUNCTION" Type="workflowModel.Store.FUNCTION" Multiplicity="1" />
+          <End Role="PERSON" Type="workflowModel.Store.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCTION">
+              <PropertyRef Name="FUNCTION_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="FUNCTION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_HOLD_ROLE">
+          <End Role="ROLE" Type="workflowModel.Store.ROLE" Multiplicity="1" />
+          <End Role="PERSON" Type="workflowModel.Store.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="ROLE_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="workflowModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="workflowEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ARTICLE" EntityType="workflowModel.ARTICLE" />
+          <EntitySet Name="FILE" EntityType="workflowModel.FILE" />
+          <EntitySet Name="FILE_TYPE" EntityType="workflowModel.FILE_TYPE" />
+          <EntitySet Name="FUNCTION" EntityType="workflowModel.FUNCTION" />
+          <EntitySet Name="HISTORIC" EntityType="workflowModel.HISTORIC" />
+          <EntitySet Name="IMG" EntityType="workflowModel.IMG" />
+          <EntitySet Name="PERSON" EntityType="workflowModel.PERSON" />
+          <EntitySet Name="ROLE" EntityType="workflowModel.ROLE" />
+          <EntitySet Name="STATUS" EntityType="workflowModel.STATUS" />
+          <EntitySet Name="TEAM" EntityType="workflowModel.TEAM" />
+          <EntitySet Name="THEME" EntityType="workflowModel.THEME" />
+          <EntitySet Name="VIDEO" EntityType="workflowModel.VIDEO" />
+          <AssociationSet Name="FK_FILE_EXPORT_ARTICLE" Association="workflowModel.FK_FILE_EXPORT_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="FILE" EntitySet="FILE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_PARTICIPA_ARTICLE" Association="workflowModel.FK_HISTORIC_PARTICIPA_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="HISTORIC" EntitySet="HISTORIC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FILE_CONTAIN_FILE_TYP" Association="workflowModel.FK_FILE_CONTAIN_FILE_TYP">
+            <End Role="FILE_TYPE" EntitySet="FILE_TYPE" />
+            <End Role="FILE" EntitySet="FILE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_HAVE_FUNCTION" Association="workflowModel.FK_PERSON_HAVE_FUNCTION">
+            <End Role="FUNCTION" EntitySet="FUNCTION" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_PARTICIPA_PERSON" Association="workflowModel.FK_HISTORIC_PARTICIPA_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="HISTORIC" EntitySet="HISTORIC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_PARTICIPA_STATUS" Association="workflowModel.FK_HISTORIC_PARTICIPA_STATUS">
+            <End Role="STATUS" EntitySet="STATUS" />
+            <End Role="HISTORIC" EntitySet="HISTORIC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_BELONG_TEAM" Association="workflowModel.FK_PERSON_BELONG_TEAM">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_HOLD_ROLE" Association="workflowModel.FK_PERSON_HOLD_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="ARTICLE_IMG_LINE" Association="workflowModel.ARTICLE_IMG_LINE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="IMG" EntitySet="IMG" />
+          </AssociationSet>
+          <AssociationSet Name="ARTICLE_THEME_LINE" Association="workflowModel.ARTICLE_THEME_LINE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="THEME" EntitySet="THEME" />
+          </AssociationSet>
+          <AssociationSet Name="ARTICLE_VIDEO_LINE" Association="workflowModel.ARTICLE_VIDEO_LINE">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="VIDEO" EntitySet="VIDEO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ARTICLE">
+          <Key>
+            <PropertyRef Name="ARTICLE_ID" />
+          </Key>
+          <Property Name="ARTICLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="ARTICLE_NBR" Type="Int32" Nullable="false" />
+          <Property Name="AUTHOR" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="SOURCES" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ANGLE" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="TITLE" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="TITLE_FB" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CHAPO" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="HISTORIC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFICATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="VALIDATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="TARGET_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="FILE" Relationship="workflowModel.FK_FILE_EXPORT_ARTICLE" FromRole="ARTICLE" ToRole="FILE" />
+          <NavigationProperty Name="HISTORIC1" Relationship="workflowModel.FK_HISTORIC_PARTICIPA_ARTICLE" FromRole="ARTICLE" ToRole="HISTORIC" />
+          <NavigationProperty Name="IMG" Relationship="workflowModel.ARTICLE_IMG_LINE" FromRole="ARTICLE" ToRole="IMG" />
+          <NavigationProperty Name="THEME" Relationship="workflowModel.ARTICLE_THEME_LINE" FromRole="ARTICLE" ToRole="THEME" />
+          <NavigationProperty Name="VIDEO" Relationship="workflowModel.ARTICLE_VIDEO_LINE" FromRole="ARTICLE" ToRole="VIDEO" />
+        </EntityType>
+        <EntityType Name="FILE">
+          <Key>
+            <PropertyRef Name="PDF_ID" />
+          </Key>
+          <Property Name="PDF_ID" Type="Int32" Nullable="false" />
+          <Property Name="ARTICLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="FILE_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PDF_NAME" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PDF_URL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ARTICLE" Relationship="workflowModel.FK_FILE_EXPORT_ARTICLE" FromRole="FILE" ToRole="ARTICLE" />
+          <NavigationProperty Name="FILE_TYPE" Relationship="workflowModel.FK_FILE_CONTAIN_FILE_TYP" FromRole="FILE" ToRole="FILE_TYPE" />
+        </EntityType>
+        <EntityType Name="FILE_TYPE">
+          <Key>
+            <PropertyRef Name="FILE_TYPE_ID" />
+          </Key>
+          <Property Name="FILE_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="FILE_TYPE_LABEL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FILE" Relationship="workflowModel.FK_FILE_CONTAIN_FILE_TYP" FromRole="FILE_TYPE" ToRole="FILE" />
+        </EntityType>
+        <EntityType Name="FUNCTION">
+          <Key>
+            <PropertyRef Name="FUNCTION_ID" />
+          </Key>
+          <Property Name="FUNCTION_ID" Type="Int32" Nullable="false" />
+          <Property Name="FUNCTION_LABEL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PERSON" Relationship="workflowModel.FK_PERSON_HAVE_FUNCTION" FromRole="FUNCTION" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="HISTORIC">
+          <Key>
+            <PropertyRef Name="PERSON_ID" />
+            <PropertyRef Name="ARTICLE_ID" />
+            <PropertyRef Name="STATUS_ID" />
+          </Key>
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" />
+          <Property Name="ARTICLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS_ID" Type="Int32" Nullable="false" />
+          <Property Name="DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ARTICLE" Relationship="workflowModel.FK_HISTORIC_PARTICIPA_ARTICLE" FromRole="HISTORIC" ToRole="ARTICLE" />
+          <NavigationProperty Name="PERSON" Relationship="workflowModel.FK_HISTORIC_PARTICIPA_PERSON" FromRole="HISTORIC" ToRole="PERSON" />
+          <NavigationProperty Name="STATUS" Relationship="workflowModel.FK_HISTORIC_PARTICIPA_STATUS" FromRole="HISTORIC" ToRole="STATUS" />
+        </EntityType>
+        <EntityType Name="IMG">
+          <Key>
+            <PropertyRef Name="IMG_ID" />
+          </Key>
+          <Property Name="IMG_ID" Type="Int32" Nullable="false" />
+          <Property Name="IMG_ALT" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IMG_NAME" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IMG_CREDITS" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IMG_LEGEND" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IMG_SRC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IMG_URL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ARTICLE" Relationship="workflowModel.ARTICLE_IMG_LINE" FromRole="IMG" ToRole="ARTICLE" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="PERSON_ID" />
+          </Key>
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_TEAM" Type="Int32" Nullable="false" />
+          <Property Name="ROLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="FUNCTION_ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FIRSTNAME" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="MAIL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PWD" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PHONE" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FUNCTION" Relationship="workflowModel.FK_PERSON_HAVE_FUNCTION" FromRole="PERSON" ToRole="FUNCTION" />
+          <NavigationProperty Name="HISTORIC" Relationship="workflowModel.FK_HISTORIC_PARTICIPA_PERSON" FromRole="PERSON" ToRole="HISTORIC" />
+          <NavigationProperty Name="TEAM" Relationship="workflowModel.FK_PERSON_BELONG_TEAM" FromRole="PERSON" ToRole="TEAM" />
+          <NavigationProperty Name="ROLE" Relationship="workflowModel.FK_PERSON_HOLD_ROLE" FromRole="PERSON" ToRole="ROLE" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="ROLE_LABEL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PERSON" Relationship="workflowModel.FK_PERSON_HOLD_ROLE" FromRole="ROLE" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="STATUS">
+          <Key>
+            <PropertyRef Name="STATUS_ID" />
+          </Key>
+          <Property Name="STATUS_ID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS_LABEL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="HISTORIC" Relationship="workflowModel.FK_HISTORIC_PARTICIPA_STATUS" FromRole="STATUS" ToRole="HISTORIC" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID_TEAM" />
+          </Key>
+          <Property Name="ID_TEAM" Type="Int32" Nullable="false" />
+          <Property Name="ROLE_LABEL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PERSON" Relationship="workflowModel.FK_PERSON_BELONG_TEAM" FromRole="TEAM" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="THEME">
+          <Key>
+            <PropertyRef Name="THEME_ID" />
+          </Key>
+          <Property Name="THEME_ID" Type="Int32" Nullable="false" />
+          <Property Name="THEME_LABEL" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ARTICLE" Relationship="workflowModel.ARTICLE_THEME_LINE" FromRole="THEME" ToRole="ARTICLE" />
+        </EntityType>
+        <EntityType Name="VIDEO">
+          <Key>
+            <PropertyRef Name="IMG_ID2" />
+          </Key>
+          <Property Name="IMG_ID2" Type="Int32" Nullable="false" />
+          <Property Name="VIDEO_ALT" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VIDEO_NAME" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VIDEO_CREDITS" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VIDEO_LEGEND" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VIDEO_MARKUP" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ARTICLE" Relationship="workflowModel.ARTICLE_VIDEO_LINE" FromRole="VIDEO" ToRole="ARTICLE" />
+        </EntityType>
+        <Association Name="FK_FILE_EXPORT_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.ARTICLE" Multiplicity="1" />
+          <End Role="FILE" Type="workflowModel.FILE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="FILE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_PARTICIPA_ARTICLE">
+          <End Role="ARTICLE" Type="workflowModel.ARTICLE" Multiplicity="1" />
+          <End Role="HISTORIC" Type="workflowModel.HISTORIC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Principal>
+            <Dependent Role="HISTORIC">
+              <PropertyRef Name="ARTICLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FILE_CONTAIN_FILE_TYP">
+          <End Role="FILE_TYPE" Type="workflowModel.FILE_TYPE" Multiplicity="1" />
+          <End Role="FILE" Type="workflowModel.FILE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILE_TYPE">
+              <PropertyRef Name="FILE_TYPE_ID" />
+            </Principal>
+            <Dependent Role="FILE">
+              <PropertyRef Name="FILE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_HAVE_FUNCTION">
+          <End Role="FUNCTION" Type="workflowModel.FUNCTION" Multiplicity="1" />
+          <End Role="PERSON" Type="workflowModel.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCTION">
+              <PropertyRef Name="FUNCTION_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="FUNCTION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_PARTICIPA_PERSON">
+          <End Role="PERSON" Type="workflowModel.PERSON" Multiplicity="1" />
+          <End Role="HISTORIC" Type="workflowModel.HISTORIC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="PERSON_ID" />
+            </Principal>
+            <Dependent Role="HISTORIC">
+              <PropertyRef Name="PERSON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_PARTICIPA_STATUS">
+          <End Role="STATUS" Type="workflowModel.STATUS" Multiplicity="1" />
+          <End Role="HISTORIC" Type="workflowModel.HISTORIC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS">
+              <PropertyRef Name="STATUS_ID" />
+            </Principal>
+            <Dependent Role="HISTORIC">
+              <PropertyRef Name="STATUS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_BELONG_TEAM">
+          <End Role="TEAM" Type="workflowModel.TEAM" Multiplicity="1" />
+          <End Role="PERSON" Type="workflowModel.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_TEAM" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="ID_TEAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_HOLD_ROLE">
+          <End Role="ROLE" Type="workflowModel.ROLE" Multiplicity="1" />
+          <End Role="PERSON" Type="workflowModel.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="ROLE_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ARTICLE_IMG_LINE">
+          <End Role="ARTICLE" Type="workflowModel.ARTICLE" Multiplicity="*" />
+          <End Role="IMG" Type="workflowModel.IMG" Multiplicity="*" />
+        </Association>
+        <Association Name="ARTICLE_THEME_LINE">
+          <End Role="ARTICLE" Type="workflowModel.ARTICLE" Multiplicity="*" />
+          <End Role="THEME" Type="workflowModel.THEME" Multiplicity="*" />
+        </Association>
+        <Association Name="ARTICLE_VIDEO_LINE">
+          <End Role="ARTICLE" Type="workflowModel.ARTICLE" Multiplicity="*" />
+          <End Role="VIDEO" Type="workflowModel.VIDEO" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="workflowModelStoreContainer" CdmEntityContainer="workflowEntities">
+          <EntitySetMapping Name="ARTICLE">
+            <EntityTypeMapping TypeName="workflowModel.ARTICLE">
+              <MappingFragment StoreEntitySet="ARTICLE">
+                <ScalarProperty Name="ARTICLE_ID" ColumnName="ARTICLE_ID" />
+                <ScalarProperty Name="ARTICLE_NBR" ColumnName="ARTICLE_NBR" />
+                <ScalarProperty Name="AUTHOR" ColumnName="AUTHOR" />
+                <ScalarProperty Name="SOURCES" ColumnName="SOURCES" />
+                <ScalarProperty Name="ANGLE" ColumnName="ANGLE" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="TITLE_FB" ColumnName="TITLE_FB" />
+                <ScalarProperty Name="CHAPO" ColumnName="CHAPO" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="HISTORIC" ColumnName="HISTORIC" />
+                <ScalarProperty Name="MODIFICATION_DATE" ColumnName="MODIFICATION_DATE" />
+                <ScalarProperty Name="VALIDATION_DATE" ColumnName="VALIDATION_DATE" />
+                <ScalarProperty Name="TARGET_DATE" ColumnName="TARGET_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FILE">
+            <EntityTypeMapping TypeName="workflowModel.FILE">
+              <MappingFragment StoreEntitySet="FILE">
+                <ScalarProperty Name="PDF_ID" ColumnName="PDF_ID" />
+                <ScalarProperty Name="ARTICLE_ID" ColumnName="ARTICLE_ID" />
+                <ScalarProperty Name="FILE_TYPE_ID" ColumnName="FILE_TYPE_ID" />
+                <ScalarProperty Name="PDF_NAME" ColumnName="PDF_NAME" />
+                <ScalarProperty Name="PDF_URL" ColumnName="PDF_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FILE_TYPE">
+            <EntityTypeMapping TypeName="workflowModel.FILE_TYPE">
+              <MappingFragment StoreEntitySet="FILE_TYPE">
+                <ScalarProperty Name="FILE_TYPE_ID" ColumnName="FILE_TYPE_ID" />
+                <ScalarProperty Name="FILE_TYPE_LABEL" ColumnName="FILE_TYPE_LABEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FUNCTION">
+            <EntityTypeMapping TypeName="workflowModel.FUNCTION">
+              <MappingFragment StoreEntitySet="FUNCTION">
+                <ScalarProperty Name="FUNCTION_ID" ColumnName="FUNCTION_ID" />
+                <ScalarProperty Name="FUNCTION_LABEL" ColumnName="FUNCTION_LABEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIC">
+            <EntityTypeMapping TypeName="workflowModel.HISTORIC">
+              <MappingFragment StoreEntitySet="HISTORIC">
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+                <ScalarProperty Name="ARTICLE_ID" ColumnName="ARTICLE_ID" />
+                <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMG">
+            <EntityTypeMapping TypeName="workflowModel.IMG">
+              <MappingFragment StoreEntitySet="IMG">
+                <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+                <ScalarProperty Name="IMG_ALT" ColumnName="IMG_ALT" />
+                <ScalarProperty Name="IMG_NAME" ColumnName="IMG_NAME" />
+                <ScalarProperty Name="IMG_CREDITS" ColumnName="IMG_CREDITS" />
+                <ScalarProperty Name="IMG_LEGEND" ColumnName="IMG_LEGEND" />
+                <ScalarProperty Name="IMG_SRC" ColumnName="IMG_SRC" />
+                <ScalarProperty Name="IMG_URL" ColumnName="IMG_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSON">
+            <EntityTypeMapping TypeName="workflowModel.PERSON">
+              <MappingFragment StoreEntitySet="PERSON">
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+                <ScalarProperty Name="ID_TEAM" ColumnName="ID_TEAM" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="FUNCTION_ID" ColumnName="FUNCTION_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLE">
+            <EntityTypeMapping TypeName="workflowModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="ROLE_LABEL" ColumnName="ROLE_LABEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUS">
+            <EntityTypeMapping TypeName="workflowModel.STATUS">
+              <MappingFragment StoreEntitySet="STATUS">
+                <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+                <ScalarProperty Name="STATUS_LABEL" ColumnName="STATUS_LABEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAM">
+            <EntityTypeMapping TypeName="workflowModel.TEAM">
+              <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="ID_TEAM" ColumnName="ID_TEAM" />
+                <ScalarProperty Name="ROLE_LABEL" ColumnName="ROLE_LABEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THEME">
+            <EntityTypeMapping TypeName="workflowModel.THEME">
+              <MappingFragment StoreEntitySet="THEME">
+                <ScalarProperty Name="THEME_ID" ColumnName="THEME_ID" />
+                <ScalarProperty Name="THEME_LABEL" ColumnName="THEME_LABEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VIDEO">
+            <EntityTypeMapping TypeName="workflowModel.VIDEO">
+              <MappingFragment StoreEntitySet="VIDEO">
+                <ScalarProperty Name="IMG_ID2" ColumnName="IMG_ID2" />
+                <ScalarProperty Name="VIDEO_ALT" ColumnName="VIDEO_ALT" />
+                <ScalarProperty Name="VIDEO_NAME" ColumnName="VIDEO_NAME" />
+                <ScalarProperty Name="VIDEO_CREDITS" ColumnName="VIDEO_CREDITS" />
+                <ScalarProperty Name="VIDEO_LEGEND" ColumnName="VIDEO_LEGEND" />
+                <ScalarProperty Name="VIDEO_MARKUP" ColumnName="VIDEO_MARKUP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ARTICLE_IMG_LINE" TypeName="workflowModel.ARTICLE_IMG_LINE" StoreEntitySet="ARTICLE_IMG_LINE">
+            <EndProperty Name="ARTICLE">
+              <ScalarProperty Name="ARTICLE_ID" ColumnName="ARTICLE_ID" />
+            </EndProperty>
+            <EndProperty Name="IMG">
+              <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ARTICLE_THEME_LINE" TypeName="workflowModel.ARTICLE_THEME_LINE" StoreEntitySet="ARTICLE_THEME_LINE">
+            <EndProperty Name="ARTICLE">
+              <ScalarProperty Name="ARTICLE_ID" ColumnName="ARTICLE_ID" />
+            </EndProperty>
+            <EndProperty Name="THEME">
+              <ScalarProperty Name="THEME_ID" ColumnName="THEME_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ARTICLE_VIDEO_LINE" TypeName="workflowModel.ARTICLE_VIDEO_LINE" StoreEntitySet="ARTICLE_VIDEO_LINE">
+            <EndProperty Name="ARTICLE">
+              <ScalarProperty Name="ARTICLE_ID" ColumnName="ARTICLE_ID" />
+            </EndProperty>
+            <EndProperty Name="VIDEO">
+              <ScalarProperty Name="IMG_ID2" ColumnName="IMG_ID2" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

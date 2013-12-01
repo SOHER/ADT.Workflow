@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd592c5332b649669769b36395b8c77c" Name="Diagram1">
+        <EntityTypeShape EntityType="workflowModel.ARTICLE" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.FILE" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.FILE_TYPE" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.FUNCTION" Width="1.5" PointX="1.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.HISTORIC" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.IMG" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.PERSON" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.ROLE" Width="1.5" PointX="1.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.STATUS" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.TEAM" Width="1.5" PointX="1.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.THEME" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="workflowModel.VIDEO" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <AssociationConnector Association="workflowModel.FK_FILE_EXPORT_ARTICLE" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_HISTORIC_PARTICIPA_ARTICLE" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_FILE_CONTAIN_FILE_TYP" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_PERSON_HAVE_FUNCTION" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_HISTORIC_PARTICIPA_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_HISTORIC_PARTICIPA_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_PERSON_BELONG_TEAM" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.FK_PERSON_HOLD_ROLE" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.ARTICLE_IMG_LINE" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.ARTICLE_THEME_LINE" ManuallyRouted="false" />
+        <AssociationConnector Association="workflowModel.ARTICLE_VIDEO_LINE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
