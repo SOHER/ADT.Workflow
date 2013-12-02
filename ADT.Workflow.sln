@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.UI.Web", "ADT.Workflow\ADT.Workflow.UI.Web.csproj", "{0BD741F3-8040-4873-9E14-672D9BBA8DFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.UI", "ADT.Workflow\ADT.Workflow.Web.UI.csproj", "{0BD741F3-8040-4873-9E14-672D9BBA8DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.Models", "ADT.Workflow.UI.Web.Model\ADT.Workflow.Web.Models.csproj", "{BD205E83-789B-4C63-8F7C-D90DA845CEF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.Controllers", "ADT.Workflow.UI.Web.Controller\ADT.Workflow.Web.Controllers.csproj", "{9F539272-E3B4-4C58-9E03-534E8B4655A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{0BD741F3-8040-4873-9E14-672D9BBA8DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BD741F3-8040-4873-9E14-672D9BBA8DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BD741F3-8040-4873-9E14-672D9BBA8DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD205E83-789B-4C63-8F7C-D90DA845CEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD205E83-789B-4C63-8F7C-D90DA845CEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD205E83-789B-4C63-8F7C-D90DA845CEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD205E83-789B-4C63-8F7C-D90DA845CEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
