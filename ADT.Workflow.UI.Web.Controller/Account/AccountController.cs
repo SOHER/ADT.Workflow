@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using ADT.Workflow.Web.Models;
+// using ADT.Workflow.Web.UI.Filters;
 
 namespace ADT.Workflow.Web.Controllers
 {
@@ -17,6 +18,7 @@ namespace ADT.Workflow.Web.Controllers
         // GET: /Account/Login
 
         [AllowAnonymous]
+        //[InitializeSimpleMembership]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
