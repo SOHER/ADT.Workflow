@@ -165,14 +165,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ADT.Workflow.csproj.GhostDoc.xml" />
-    <Content Include="ADT.Workflow.UI.csproj.user" />
     <Content Include="bin\ADT.Workflow.Model.dll" />
     <Content Include="bin\ADT.Workflow.Web.UI.dll" />
     <Content Include="bin\ADT.Workflow.Web.UI.pdb" />
@@ -256,14 +252,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="obj\Debug\ADT.Workflow.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Debug\ADT.Workflow.UI.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Debug\ADT.Workflow.UI.Web.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
-    <Content Include="obj\Debug\ADT.Workflow.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\ADT.Workflow.UI.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\ADT.Workflow.UI.Web.csproj.FileListAbsolute.txt" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -316,11 +305,25 @@
     <Content Include="Views\Person\Create.cshtml" />
     <Content Include="Views\Person\Edit.cshtml" />
     <Content Include="Views\Person\Delete.cshtml" />
+    <Content Include="Views\Function\Index.cshtml" />
+    <Content Include="Views\Function\Details.cshtml" />
+    <Content Include="Views\Function\Create.cshtml" />
+    <Content Include="Views\Function\Edit.cshtml" />
+    <Content Include="Views\Function\Delete.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Team\Details.cshtml" />
+    <Content Include="Views\Team\Create.cshtml" />
+    <Content Include="Views\Team\Edit.cshtml" />
+    <Content Include="Views\Team\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="bin\fr\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

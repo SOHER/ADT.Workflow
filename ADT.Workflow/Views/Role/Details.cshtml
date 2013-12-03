@@ -1,0 +1,22 @@
+﻿@model ADT.Workflow.Web.Models.ROLE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ROLE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ROLE_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ROLE_LABEL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ROLE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

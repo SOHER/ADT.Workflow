@@ -1,0 +1,22 @@
+﻿@model ADT.Workflow.Web.Models.FUNCTION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FUNCTION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FUNCTION_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FUNCTION_LABEL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FUNCTION_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

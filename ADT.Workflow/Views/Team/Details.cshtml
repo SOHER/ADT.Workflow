@@ -1,0 +1,22 @@
+﻿@model ADT.Workflow.Web.Models.TEAM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TEAM</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TEAM_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TEAM_LABEL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TEAM_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

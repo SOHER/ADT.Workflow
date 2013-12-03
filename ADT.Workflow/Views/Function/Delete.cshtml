@@ -1,0 +1,25 @@
+﻿@model ADT.Workflow.Web.Models.FUNCTION
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>FUNCTION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FUNCTION_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FUNCTION_LABEL)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

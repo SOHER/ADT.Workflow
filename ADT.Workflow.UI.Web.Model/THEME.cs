@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class THEME
     {
@@ -21,6 +23,7 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int THEME_ID { get; set; }
         public string THEME_LABEL { get; set; }
     

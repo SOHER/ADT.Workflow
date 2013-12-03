@@ -12,6 +12,8 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     
     public partial class IMG
     {
@@ -21,6 +23,7 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IMG_ID { get; set; }
         public string IMG_ALT { get; set; }
         public string IMG_NAME { get; set; }

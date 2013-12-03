@@ -1,0 +1,37 @@
+﻿@model ADT.Workflow.Web.Models.FUNCTION
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FUNCTION</legend>
+
+        @Html.HiddenFor(model => model.FUNCTION_ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FUNCTION_LABEL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FUNCTION_LABEL)
+            @Html.ValidationMessageFor(model => model.FUNCTION_LABEL)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
