@@ -17,7 +17,7 @@ namespace ADT.Workflow.Web.Controllers
         /// Index action.
         /// </summary>
         /// <returns>ActionResult.</returns>
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
 
