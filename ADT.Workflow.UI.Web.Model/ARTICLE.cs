@@ -7,10 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     
     public partial class ARTICLE
     {
@@ -23,6 +27,7 @@ namespace ADT.Workflow.Web.Models
             this.VIDEO = new HashSet<VIDEO>();
         }
     
+        [Key]
         public int ARTICLE_ID { get; set; }
         public int ARTICLE_NBR { get; set; }
         public string AUTHOR { get; set; }

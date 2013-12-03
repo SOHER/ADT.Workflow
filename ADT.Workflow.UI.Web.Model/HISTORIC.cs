@@ -11,11 +11,15 @@ namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class HISTORIC
     {
+        [Key]
         public int PERSON_ID { get; set; }
+        [Key]
         public int ARTICLE_ID { get; set; }
+        [Key]
         public int STATUS_ID { get; set; }
         public System.DateTime DATE { get; set; }
     

@@ -11,6 +11,7 @@ namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class PERSON
     {
@@ -19,8 +20,9 @@ namespace ADT.Workflow.Web.Models
             this.HISTORIC = new HashSet<HISTORIC>();
         }
     
+        [Key]
         public int PERSON_ID { get; set; }
-        public int ID_TEAM { get; set; }
+        public int TEAM_ID { get; set; }
         public int ROLE_ID { get; set; }
         public int FUNCTION_ID { get; set; }
         public string NAME { get; set; }

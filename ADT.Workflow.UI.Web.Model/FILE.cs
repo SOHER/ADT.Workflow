@@ -11,14 +11,17 @@ namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     
     public partial class FILE
     {
-        public int PDF_ID { get; set; }
+        [Key]
+        public int FILE_ID { get; set; }
         public int ARTICLE_ID { get; set; }
         public int FILE_TYPE_ID { get; set; }
-        public string PDF_NAME { get; set; }
-        public string PDF_URL { get; set; }
+        public string FILE_NAME { get; set; }
+        public string FILE_URL { get; set; }
     
         public virtual ARTICLE ARTICLE { get; set; }
         public virtual FILE_TYPE FILE_TYPE { get; set; }

@@ -11,6 +11,7 @@ namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ROLE
     {
@@ -19,6 +20,7 @@ namespace ADT.Workflow.Web.Models
             this.PERSON = new HashSet<PERSON>();
         }
     
+        [Key]
         public int ROLE_ID { get; set; }
         public string ROLE_LABEL { get; set; }
     

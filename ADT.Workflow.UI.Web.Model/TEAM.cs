@@ -11,6 +11,7 @@ namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class TEAM
     {
@@ -19,8 +20,9 @@ namespace ADT.Workflow.Web.Models
             this.PERSON = new HashSet<PERSON>();
         }
     
-        public int ID_TEAM { get; set; }
-        public string ROLE_LABEL { get; set; }
+        [Key]
+        public int TEAM_ID { get; set; }
+        public string TEAM_LABEL { get; set; }
     
         public virtual ICollection<PERSON> PERSON { get; set; }
     }

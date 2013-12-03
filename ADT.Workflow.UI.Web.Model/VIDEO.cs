@@ -11,7 +11,8 @@ namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class VIDEO
     {
         public VIDEO()
@@ -19,7 +20,8 @@ namespace ADT.Workflow.Web.Models
             this.ARTICLE = new HashSet<ARTICLE>();
         }
     
-        public int IMG_ID2 { get; set; }
+        [Key]
+        public int VIDEO_ID { get; set; }
         public string VIDEO_ALT { get; set; }
         public string VIDEO_NAME { get; set; }
         public string VIDEO_CREDITS { get; set; }

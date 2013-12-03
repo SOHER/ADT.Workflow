@@ -12,6 +12,7 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     
     public partial class workflowEntities : DbContext
     {
@@ -22,7 +23,10 @@ namespace ADT.Workflow.Web.Models
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            //throw new UnintentionalCodeFirstException();
+
+
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     
         public DbSet<ARTICLE> ARTICLE { get; set; }
