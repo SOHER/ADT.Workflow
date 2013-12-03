@@ -1,0 +1,71 @@
+﻿@model ADT.Workflow.Web.Models.PERSON
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PERSON</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TEAM.TEAM_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TEAM.TEAM_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ROLE.ROLE_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ROLE.ROLE_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FUNCTION.FUNCTION_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FUNCTION.FUNCTION_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FIRSTNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FIRSTNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PWD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PWD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PHONE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PHONE)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PERSON_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
