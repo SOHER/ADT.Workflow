@@ -1,7 +1,7 @@
 ﻿@model ADT.Workflow.Web.Models.LoginModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Connexion à l'application Workflow";
 }
 
 <hgroup class="title">
@@ -9,7 +9,7 @@
 </hgroup>
 
 <section id="loginForm">
-<h2>Use a local account to log in.</h2>
+<h2>Utilisez vos identifiants pour vous connecter</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -18,9 +18,9 @@
         <legend>Log in Form</legend>
         <ol>
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
             </li>
             <li>
                 @Html.LabelFor(m => m.Password)
@@ -32,11 +32,8 @@
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             </li>
         </ol>
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Se connecter" />
     </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
-    </p>
 }
 </section>
 
