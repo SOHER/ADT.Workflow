@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.Models", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.Controllers", "ADT.Workflow.UI.Web.Controller\ADT.Workflow.Web.Controllers.csproj", "{9F539272-E3B4-4C58-9E03-534E8B4655A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.Controllers.Tests", "ADT.Workflow.Web.Controllers.Tests\ADT.Workflow.Web.Controllers.Tests.csproj", "{2044D612-4BC0-4221-B84C-5F63DDA079A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT.Workflow.Web.Models.Tests", "ADT.Workflow.Web.Models.Tests\ADT.Workflow.Web.Models.Tests.csproj", "{04239705-71C3-49E8-AEB1-FAD9A4233798}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F539272-E3B4-4C58-9E03-534E8B4655A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2044D612-4BC0-4221-B84C-5F63DDA079A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2044D612-4BC0-4221-B84C-5F63DDA079A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2044D612-4BC0-4221-B84C-5F63DDA079A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2044D612-4BC0-4221-B84C-5F63DDA079A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04239705-71C3-49E8-AEB1-FAD9A4233798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04239705-71C3-49E8-AEB1-FAD9A4233798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04239705-71C3-49E8-AEB1-FAD9A4233798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04239705-71C3-49E8-AEB1-FAD9A4233798}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

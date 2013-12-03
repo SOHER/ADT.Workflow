@@ -38,6 +38,7 @@ local.properties
 
 # User-specific files
 *.suo
+ADT.Workflow.v11.suo
 *.user
 *.sln.docstates
 

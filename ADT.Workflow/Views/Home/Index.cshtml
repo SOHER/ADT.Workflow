@@ -6,19 +6,25 @@
     <h3>Menu</h3>
     <p>Tableau de bord</p>
     <ul>
-        <li>@Html.ActionLink("Consulter", "ShowDashBoard")</li>
+        <li>@Html.ActionLink("Accueil", "ShowDashBoard")</li>
     </ul>
     <p>
         Gestion des articles
     </p>
     <ul>
-        <li>@Html.ActionLink("Ajouter", "AddNewArticle")</li>
-        <li>@Html.ActionLink("Consulter", "ShowCurrentUserArticles")</li>
+        <li>@Html.ActionLink("Ajouter un article", "AddArticle")</li>
+        <li>@Html.ActionLink("Consulter mes articles", "ShowCurrentUserArticles")</li>
         <li>@Html.ActionLink("Historique", "ShowHistoricUserArticles")</li>
     </ul>
 
     <p>Gestion du compte</p>
     <ul>
-        <li>@Html.ActionLink("Modifier", "EditUserProfile")</li>
+        <li>@Html.ActionLink("Modifier mon compte", "EditUserProfile")</li>
+    </ul>
+
+    <p>Gestion des utilisateurs</p>
+    <ul>
+        <li>@Html.ActionLink("Ajouter un utilisateur", "AddUser")</li>
+        <li>@Html.ActionLink("Consulter la liste", "ShowListUsers")</li>
     </ul>
 </aside>
