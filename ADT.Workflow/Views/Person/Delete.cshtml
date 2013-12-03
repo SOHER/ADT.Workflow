@@ -1,0 +1,74 @@
+﻿@model ADT.Workflow.Web.Models.PERSON
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>PERSON</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TEAM.TEAM_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TEAM.TEAM_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ROLE.ROLE_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ROLE.ROLE_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FUNCTION.FUNCTION_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FUNCTION.FUNCTION_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FIRSTNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FIRSTNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PWD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PWD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PHONE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PHONE)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

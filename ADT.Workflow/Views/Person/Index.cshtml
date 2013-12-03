@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ADT.Workflow.Web.Models.PERSON>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TEAM.TEAM_LABEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROLE.ROLE_LABEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FUNCTION.FUNCTION_LABEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIRSTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PWD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEAM.TEAM_LABEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROLE.ROLE_LABEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FUNCTION.FUNCTION_LABEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIRSTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PWD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PERSON_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PERSON_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PERSON_ID })
+        </td>
+    </tr>
+}
+
+</table>

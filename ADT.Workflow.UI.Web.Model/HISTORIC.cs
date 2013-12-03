@@ -7,19 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
 
     public partial class HISTORIC
     {
-        [Key]
+        [Key][Column(Order = 0)]
         public int PERSON_ID { get; set; }
-        [Key]
+        [Key][Column(Order = 1)]
         public int ARTICLE_ID { get; set; }
-        [Key]
+        [Key][Column(Order = 2)]
         public int STATUS_ID { get; set; }
         public System.DateTime DATE { get; set; }
     
