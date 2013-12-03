@@ -1,13 +1,24 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Page d'accueil";
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-        </div>
-    </section>
-}
+
+<aside>
+    <h3>Menu</h3>
+    <p>Tableau de bord</p>
+    <ul>
+        <li>@Html.ActionLink("Consulter", "ShowDashBoard")</li>
+    </ul>
+    <p>
+        Gestion des articles
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Ajouter", "AddNewArticle")</li>
+        <li>@Html.ActionLink("Consulter", "ShowCurrentUserArticles")</li>
+        <li>@Html.ActionLink("Historique", "ShowHistoricUserArticles")</li>
+    </ul>
+
+    <p>Gestion du compte</p>
+    <ul>
+        <li>@Html.ActionLink("Modifier", "EditUserProfile")</li>
+    </ul>
+</aside>
