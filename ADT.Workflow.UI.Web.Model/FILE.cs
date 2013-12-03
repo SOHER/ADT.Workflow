@@ -13,12 +13,10 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class FILE
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FILE_ID { get; set; }
         public int ARTICLE_ID { get; set; }
         public int FILE_TYPE_ID { get; set; }

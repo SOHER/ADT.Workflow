@@ -14,7 +14,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
 
     
@@ -30,7 +29,6 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ARTICLE_ID { get; set; }
         public int ARTICLE_NBR { get; set; }
         public string AUTHOR { get; set; }

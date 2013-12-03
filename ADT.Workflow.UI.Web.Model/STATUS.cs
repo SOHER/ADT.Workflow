@@ -13,7 +13,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     
     public partial class STATUS
@@ -24,7 +23,6 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int STATUS_ID { get; set; }
         public string STATUS_LABEL { get; set; }
 

@@ -12,7 +12,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
 
     public partial class VIDEO
@@ -23,7 +22,6 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VIDEO_ID { get; set; }
         public string VIDEO_ALT { get; set; }
         public string VIDEO_NAME { get; set; }

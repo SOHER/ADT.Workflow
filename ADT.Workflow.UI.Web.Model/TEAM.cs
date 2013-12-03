@@ -14,7 +14,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class TEAM
     {
@@ -24,7 +23,7 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public int TEAM_ID { get; set; }
         public string TEAM_LABEL { get; set; }
     

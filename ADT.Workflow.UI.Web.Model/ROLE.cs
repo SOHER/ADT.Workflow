@@ -12,7 +12,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class ROLE
     {
@@ -22,7 +21,6 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ROLE_ID { get; set; }
         public string ROLE_LABEL { get; set; }
     

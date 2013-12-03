@@ -12,7 +12,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class FILE_TYPE
     {
@@ -22,7 +21,6 @@ namespace ADT.Workflow.Web.Models
         }
     
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FILE_TYPE_ID { get; set; }
         public string FILE_TYPE_LABEL { get; set; }
     
