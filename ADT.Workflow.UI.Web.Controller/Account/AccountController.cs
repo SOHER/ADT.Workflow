@@ -11,23 +11,38 @@ using ADT.Workflow.Web.Models;
 
 namespace ADT.Workflow.Web.Controllers
 {
+    /// <summary>
+    /// Class AccountController.
+    /// </summary>
     [Authorize]
     public class AccountController : Controller
     {
         //
         // GET: /Account/Login
 
+        /// <summary>
+        /// Logins the specified return URL.
+        /// </summary>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns>ActionResult.</returns>
         [AllowAnonymous]
         //[InitializeSimpleMembership]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+
             return View();
         }
 
         //
         // POST: /Account/Login
 
+        /// <summary>
+        /// Logins the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -40,13 +55,34 @@ namespace ADT.Workflow.Web.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", "L'email ou le mot de passe envoyé est inccorect.");
+
             return View(model);
+        }
+
+        //
+        // GET: /Account/Register
+
+        /// <summary>
+        /// Registers the specified return URL.
+        /// </summary>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns>ActionResult.</returns>
+        [AllowAnonymous]
+        public ActionResult Register(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+
+            return View();
         }
 
         //
         // POST: /Account/LogOff
 
+        /// <summary>
+        /// Logs the off.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
@@ -59,6 +95,12 @@ namespace ADT.Workflow.Web.Controllers
         //
         // POST: /Account/Disassociate
 
+        /// <summary>
+        /// Disassociates the specified provider.
+        /// </summary>
+        /// <param name="provider">The provider.</param>
+        /// <param name="providerUserId">The provider user identifier.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Disassociate(string provider, string providerUserId)
@@ -88,6 +130,11 @@ namespace ADT.Workflow.Web.Controllers
         //
         // GET: /Account/Manage
 
+        /// <summary>
+        /// Manages the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
@@ -103,6 +150,11 @@ namespace ADT.Workflow.Web.Controllers
         //
         // POST: /Account/Manage
 
+        /// <summary>
+        /// Manages the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Manage(PasswordModel model)
@@ -164,6 +216,12 @@ namespace ADT.Workflow.Web.Controllers
         }
 
         #region Helpers
+
+        /// <summary>
+        /// Redirects to local.
+        /// </summary>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns>ActionResult.</returns>
         private ActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))
@@ -176,6 +234,9 @@ namespace ADT.Workflow.Web.Controllers
             }
         }
 
+        /// <summary>
+        /// Enum ManageMessageId
+        /// </summary>
         public enum ManageMessageId
         {
             ChangePasswordSuccess,
@@ -183,6 +244,11 @@ namespace ADT.Workflow.Web.Controllers
             RemoveLoginSuccess,
         }
 
+        /// <summary>
+        /// Errors the code to string.
+        /// </summary>
+        /// <param name="createStatus">The create status.</param>
+        /// <returns>System.String.</returns>
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
             // See http://go.microsoft.com/fwlink/?LinkID=177550 for

@@ -8,9 +8,9 @@
     <h1>@ViewBag.Title.</h1>
 </hgroup>
 
-<section id="loginForm">
-<h2>Utilisez vos identifiants pour vous connecter</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+<section>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -34,6 +34,9 @@
         </ol>
         <input type="submit" value="Se connecter" />
     </fieldset>
+    <p>
+        @Html.ActionLink("S'inscrire", "Register") si vous n'avez pas de compte.
+    </p>
 }
 </section>
 

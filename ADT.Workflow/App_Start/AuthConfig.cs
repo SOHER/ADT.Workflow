@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Web.WebPages.OAuth;
 using ADT.Workflow.Web.Models;
 
-namespace ADT.Workflow
+namespace ADT.Workflow.Web.UI
 {
     public static class AuthConfig
     {

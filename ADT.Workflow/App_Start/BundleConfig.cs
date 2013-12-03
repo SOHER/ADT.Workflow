@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ADT.Workflow
+namespace ADT.Workflow.Web.UI
 {
     public class BundleConfig
     {
