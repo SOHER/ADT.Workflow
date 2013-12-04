@@ -53,6 +53,12 @@
   <ItemGroup>
     <Compile Include="Account\AccountController.cs" />
     <Compile Include="Article\ArticleController.cs" />
+    <Compile Include="Article_FileType\FileTypeController.cs" />
+    <Compile Include="Article_File\FileController.cs" />
+    <Compile Include="Article_Img\ImgController.cs" />
+    <Compile Include="Article_Status\StatusController.cs" />
+    <Compile Include="Article_Theme\ThemeController.cs" />
+    <Compile Include="Article_Video\VideoController.cs" />
     <Compile Include="Home\HomeController.cs" />
     <Compile Include="Person\PersonController.cs" />
     <Compile Include="Person_Function\FunctionController.cs" />

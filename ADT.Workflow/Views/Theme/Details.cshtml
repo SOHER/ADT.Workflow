@@ -1,0 +1,22 @@
+﻿@model ADT.Workflow.Web.Models.THEME
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>THEME</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.THEME_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.THEME_LABEL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.THEME_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

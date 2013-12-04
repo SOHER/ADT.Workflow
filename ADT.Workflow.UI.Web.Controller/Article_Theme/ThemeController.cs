@@ -10,112 +10,107 @@ using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using ADT.Workflow.Web.Models;
-using System.Collections;
 
-namespace ADT.Workflow.Web.Controllers 
+namespace ADT.Workflow.Web.Controllers
 {
-    public class ArticleController : Controller
+    public class ThemeController : Controller
     {
         private workflowEntities db = new workflowEntities();
 
         //
-        // GET: /Article/
+        // GET: /Theme/
 
         public ActionResult Index()
         {
-            return View(db.ARTICLE.ToList());
+            return View(db.THEME.ToList());
         }
 
         //
-        // GET: /Article/Details/5
+        // GET: /Theme/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            THEME theme = db.THEME.Find(id);
+            if (theme == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(theme);
         }
 
         //
-        // GET: /Article/Create
+        // GET: /Theme/Create
 
         public ActionResult Create()
         {
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL");
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID",
-                                              "THEME_LABEL");
             return View();
         }
 
         //
-        // POST: /Article/Create
+        // POST: /Theme/Create
 
         [HttpPost]
-        public ActionResult Create(ARTICLE article)
+        public ActionResult Create(THEME theme)
         {
             if (ModelState.IsValid)
             {
-                db.ARTICLE.Add(article);
+                db.THEME.Add(theme);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL", article.THEME);
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID");
-            return View(article);
+
+            return View(theme);
         }
 
         //
-        // GET: /Article/Edit/5
+        // GET: /Theme/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            THEME theme = db.THEME.Find(id);
+            if (theme == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(theme);
         }
 
         //
-        // POST: /Article/Edit/5
+        // POST: /Theme/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ARTICLE article)
+        public ActionResult Edit(THEME theme)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(theme).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(article);
+            return View(theme);
         }
 
         //
-        // GET: /Article/Delete/5
+        // GET: /Theme/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            THEME theme = db.THEME.Find(id);
+            if (theme == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(theme);
         }
 
         //
-        // POST: /Article/Delete/5
+        // POST: /Theme/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            db.ARTICLE.Remove(article);
+            THEME theme = db.THEME.Find(id);
+            db.THEME.Remove(theme);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

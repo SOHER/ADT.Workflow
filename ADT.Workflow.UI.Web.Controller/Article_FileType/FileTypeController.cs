@@ -10,112 +10,108 @@ using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using ADT.Workflow.Web.Models;
-using System.Collections;
 
-namespace ADT.Workflow.Web.Controllers 
+
+namespace ADT.Workflow.Web.UI.Views.Theme
 {
-    public class ArticleController : Controller
+    public class FileTypeController : Controller
     {
         private workflowEntities db = new workflowEntities();
 
         //
-        // GET: /Article/
+        // GET: /FileType/
 
         public ActionResult Index()
         {
-            return View(db.ARTICLE.ToList());
+            return View(db.FILE_TYPE.ToList());
         }
 
         //
-        // GET: /Article/Details/5
+        // GET: /FileType/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            FILE_TYPE file_type = db.FILE_TYPE.Find(id);
+            if (file_type == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(file_type);
         }
 
         //
-        // GET: /Article/Create
+        // GET: /FileType/Create
 
         public ActionResult Create()
         {
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL");
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID",
-                                              "THEME_LABEL");
             return View();
         }
 
         //
-        // POST: /Article/Create
+        // POST: /FileType/Create
 
         [HttpPost]
-        public ActionResult Create(ARTICLE article)
+        public ActionResult Create(FILE_TYPE file_type)
         {
             if (ModelState.IsValid)
             {
-                db.ARTICLE.Add(article);
+                db.FILE_TYPE.Add(file_type);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL", article.THEME);
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID");
-            return View(article);
+
+            return View(file_type);
         }
 
         //
-        // GET: /Article/Edit/5
+        // GET: /FileType/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            FILE_TYPE file_type = db.FILE_TYPE.Find(id);
+            if (file_type == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(file_type);
         }
 
         //
-        // POST: /Article/Edit/5
+        // POST: /FileType/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ARTICLE article)
+        public ActionResult Edit(FILE_TYPE file_type)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(file_type).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(article);
+            return View(file_type);
         }
 
         //
-        // GET: /Article/Delete/5
+        // GET: /FileType/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            FILE_TYPE file_type = db.FILE_TYPE.Find(id);
+            if (file_type == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(file_type);
         }
 
         //
-        // POST: /Article/Delete/5
+        // POST: /FileType/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            db.ARTICLE.Remove(article);
+            FILE_TYPE file_type = db.FILE_TYPE.Find(id);
+            db.FILE_TYPE.Remove(file_type);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

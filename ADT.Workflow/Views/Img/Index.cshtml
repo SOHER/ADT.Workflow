@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ADT.Workflow.Web.Models.IMG>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_ALT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_CREDITS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_LEGEND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_SRC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_URL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_ALT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_CREDITS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_LEGEND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_SRC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_URL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IMG_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IMG_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IMG_ID })
+        </td>
+    </tr>
+}
+
+</table>

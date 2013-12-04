@@ -42,7 +42,7 @@
             @Html.DisplayNameFor(model => model.MODIFICATION_DATE)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VALIDATION_DATE)
+            @Html.DisplayNameFor(model => model.THEME)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TARGET_DATE)
@@ -92,7 +92,22 @@
             @Html.DisplayFor(modelItem => item.MODIFICATION_DATE)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.VALIDATION_DATE)
+            @* @foreach (var t in item.THEME )
+             {
+                 if (t != null)
+                 {
+                @Html.DisplayFor(modelItem => t)                 
+             
+                }
+             }*@
+             @foreach (var t in item.THEME )
+             {
+
+                @Html.DisplayText("test")               
+             
+                
+             }
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TARGET_DATE)

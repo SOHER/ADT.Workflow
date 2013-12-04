@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ADT.Workflow.Web.Models.FILE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ARTICLE.ARTICLE_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_TYPE.FILE_TYPE_LABEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_URL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARTICLE.ARTICLE_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_TYPE.FILE_TYPE_LABEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_URL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FILE_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FILE_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FILE_ID })
+        </td>
+    </tr>
+}
+
+</table>

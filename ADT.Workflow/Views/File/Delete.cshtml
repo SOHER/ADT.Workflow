@@ -1,0 +1,46 @@
+﻿@model ADT.Workflow.Web.Models.FILE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>FILE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ARTICLE.AUTHOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ARTICLE.AUTHOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_TYPE.FILE_TYPE_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_TYPE.FILE_TYPE_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_URL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_URL)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,61 @@
+﻿@model ADT.Workflow.Web.Models.FILE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FILE</legend>
+
+        @Html.HiddenFor(model => model.FILE_ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ARTICLE_ID, "ARTICLE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ARTICLE_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ARTICLE_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_TYPE_ID, "FILE_TYPE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FILE_TYPE_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.FILE_TYPE_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FILE_NAME)
+            @Html.ValidationMessageFor(model => model.FILE_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FILE_URL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FILE_URL)
+            @Html.ValidationMessageFor(model => model.FILE_URL)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

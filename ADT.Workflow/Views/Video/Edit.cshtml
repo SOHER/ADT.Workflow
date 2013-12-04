@@ -1,0 +1,69 @@
+﻿@model ADT.Workflow.Web.Models.VIDEO
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>VIDEO</legend>
+
+        @Html.HiddenFor(model => model.VIDEO_ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VIDEO_ALT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VIDEO_ALT)
+            @Html.ValidationMessageFor(model => model.VIDEO_ALT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VIDEO_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VIDEO_NAME)
+            @Html.ValidationMessageFor(model => model.VIDEO_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VIDEO_CREDITS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VIDEO_CREDITS)
+            @Html.ValidationMessageFor(model => model.VIDEO_CREDITS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VIDEO_LEGEND)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VIDEO_LEGEND)
+            @Html.ValidationMessageFor(model => model.VIDEO_LEGEND)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VIDEO_MARKUP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VIDEO_MARKUP)
+            @Html.ValidationMessageFor(model => model.VIDEO_MARKUP)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

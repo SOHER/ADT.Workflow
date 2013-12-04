@@ -10,112 +10,107 @@ using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using ADT.Workflow.Web.Models;
-using System.Collections;
 
 namespace ADT.Workflow.Web.Controllers 
 {
-    public class ArticleController : Controller
+    public class ImgController : Controller
     {
         private workflowEntities db = new workflowEntities();
 
         //
-        // GET: /Article/
+        // GET: /Img/
 
         public ActionResult Index()
         {
-            return View(db.ARTICLE.ToList());
+            return View(db.IMG.ToList());
         }
 
         //
-        // GET: /Article/Details/5
+        // GET: /Img/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            IMG img = db.IMG.Find(id);
+            if (img == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(img);
         }
 
         //
-        // GET: /Article/Create
+        // GET: /Img/Create
 
         public ActionResult Create()
         {
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL");
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID",
-                                              "THEME_LABEL");
             return View();
         }
 
         //
-        // POST: /Article/Create
+        // POST: /Img/Create
 
         [HttpPost]
-        public ActionResult Create(ARTICLE article)
+        public ActionResult Create(IMG img)
         {
             if (ModelState.IsValid)
             {
-                db.ARTICLE.Add(article);
+                db.IMG.Add(img);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL", article.THEME);
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID");
-            return View(article);
+
+            return View(img);
         }
 
         //
-        // GET: /Article/Edit/5
+        // GET: /Img/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            IMG img = db.IMG.Find(id);
+            if (img == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(img);
         }
 
         //
-        // POST: /Article/Edit/5
+        // POST: /Img/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ARTICLE article)
+        public ActionResult Edit(IMG img)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(img).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(article);
+            return View(img);
         }
 
         //
-        // GET: /Article/Delete/5
+        // GET: /Img/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            IMG img = db.IMG.Find(id);
+            if (img == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(img);
         }
 
         //
-        // POST: /Article/Delete/5
+        // POST: /Img/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            db.ARTICLE.Remove(article);
+            IMG img = db.IMG.Find(id);
+            db.IMG.Remove(img);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

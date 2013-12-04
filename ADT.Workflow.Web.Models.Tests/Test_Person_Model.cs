@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using NUnit.Framework;
 
-using ADT.Workflow.Web.Models;
 
 namespace ADT.Workflow.Web.Models.Tests
 {
@@ -17,7 +16,7 @@ namespace ADT.Workflow.Web.Models.Tests
     /// Inclut les test de ctor ROLE, FUNCTION, TEAM
     /// /// </summary>
     [TestFixture]
-    public class Test_Person
+    public class Test_Person_Model
     {
 
 

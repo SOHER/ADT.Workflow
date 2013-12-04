@@ -1,0 +1,43 @@
+﻿@model ADT.Workflow.Web.Models.FILE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FILE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ARTICLE.AUTHOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ARTICLE.AUTHOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_TYPE.FILE_TYPE_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_TYPE.FILE_TYPE_LABEL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_URL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_URL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FILE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

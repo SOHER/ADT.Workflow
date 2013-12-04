@@ -1,0 +1,57 @@
+﻿@model ADT.Workflow.Web.Models.IMG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>IMG</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IMG_ALT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IMG_ALT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IMG_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IMG_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IMG_CREDITS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IMG_CREDITS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IMG_LEGEND)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IMG_LEGEND)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IMG_SRC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IMG_SRC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IMG_URL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IMG_URL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IMG_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

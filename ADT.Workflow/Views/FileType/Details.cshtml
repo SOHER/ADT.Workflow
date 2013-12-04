@@ -1,0 +1,22 @@
+﻿@model ADT.Workflow.Web.Models.FILE_TYPE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FILE_TYPE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FILE_TYPE_LABEL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FILE_TYPE_LABEL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FILE_TYPE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

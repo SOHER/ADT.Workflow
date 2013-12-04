@@ -10,112 +10,107 @@ using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using ADT.Workflow.Web.Models;
-using System.Collections;
 
 namespace ADT.Workflow.Web.Controllers 
 {
-    public class ArticleController : Controller
+    public class VideoController : Controller
     {
         private workflowEntities db = new workflowEntities();
 
         //
-        // GET: /Article/
+        // GET: /Video/
 
         public ActionResult Index()
         {
-            return View(db.ARTICLE.ToList());
+            return View(db.VIDEO.ToList());
         }
 
         //
-        // GET: /Article/Details/5
+        // GET: /Video/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            VIDEO video = db.VIDEO.Find(id);
+            if (video == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(video);
         }
 
         //
-        // GET: /Article/Create
+        // GET: /Video/Create
 
         public ActionResult Create()
         {
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL");
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID",
-                                              "THEME_LABEL");
             return View();
         }
 
         //
-        // POST: /Article/Create
+        // POST: /Video/Create
 
         [HttpPost]
-        public ActionResult Create(ARTICLE article)
+        public ActionResult Create(VIDEO video)
         {
             if (ModelState.IsValid)
             {
-                db.ARTICLE.Add(article);
+                db.VIDEO.Add(video);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL", article.THEME);
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID");
-            return View(article);
+
+            return View(video);
         }
 
         //
-        // GET: /Article/Edit/5
+        // GET: /Video/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            VIDEO video = db.VIDEO.Find(id);
+            if (video == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(video);
         }
 
         //
-        // POST: /Article/Edit/5
+        // POST: /Video/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ARTICLE article)
+        public ActionResult Edit(VIDEO video)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(video).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(article);
+            return View(video);
         }
 
         //
-        // GET: /Article/Delete/5
+        // GET: /Video/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            VIDEO video = db.VIDEO.Find(id);
+            if (video == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(video);
         }
 
         //
-        // POST: /Article/Delete/5
+        // POST: /Video/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            db.ARTICLE.Remove(article);
+            VIDEO video = db.VIDEO.Find(id);
+            db.VIDEO.Remove(video);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

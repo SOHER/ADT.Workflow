@@ -325,6 +325,36 @@
     <Content Include="Views\Article\Create.cshtml" />
     <Content Include="Views\Article\Edit.cshtml" />
     <Content Include="Views\Article\Delete.cshtml" />
+    <Content Include="Views\Theme\Index.cshtml" />
+    <Content Include="Views\Theme\Details.cshtml" />
+    <Content Include="Views\Theme\Create.cshtml" />
+    <Content Include="Views\Theme\Edit.cshtml" />
+    <Content Include="Views\Theme\Delete.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\Details.cshtml" />
+    <Content Include="Views\Video\Create.cshtml" />
+    <Content Include="Views\Video\Edit.cshtml" />
+    <Content Include="Views\Video\Delete.cshtml" />
+    <Content Include="Views\Img\Index.cshtml" />
+    <Content Include="Views\Img\Details.cshtml" />
+    <Content Include="Views\Img\Create.cshtml" />
+    <Content Include="Views\Img\Edit.cshtml" />
+    <Content Include="Views\Img\Delete.cshtml" />
+    <Content Include="Views\FileType\Index.cshtml" />
+    <Content Include="Views\FileType\Details.cshtml" />
+    <Content Include="Views\FileType\Create.cshtml" />
+    <Content Include="Views\FileType\Edit.cshtml" />
+    <Content Include="Views\FileType\Delete.cshtml" />
+    <Content Include="Views\File\Index.cshtml" />
+    <Content Include="Views\File\Details.cshtml" />
+    <Content Include="Views\File\Create.cshtml" />
+    <Content Include="Views\File\Edit.cshtml" />
+    <Content Include="Views\File\Delete.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Status\Details.cshtml" />
+    <Content Include="Views\Status\Create.cshtml" />
+    <Content Include="Views\Status\Edit.cshtml" />
+    <Content Include="Views\Status\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,6 +27,15 @@
             @Html.EditorFor(model => model.AUTHOR)
             @Html.ValidationMessageFor(model => model.AUTHOR)
         </div>
+        
+                <div class="editor-label">
+            @Html.LabelFor(model => model.THEME)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("THEME_ID", 
+                      (SelectList)(ViewData["THEME"]), "--Choisir --")
+            @Html.ValidationMessageFor(model => model.THEME)
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.SOURCES)

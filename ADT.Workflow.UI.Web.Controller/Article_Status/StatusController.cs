@@ -10,112 +10,108 @@ using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using ADT.Workflow.Web.Models;
-using System.Collections;
 
-namespace ADT.Workflow.Web.Controllers 
+
+namespace ADT.Workflow.Web.UI.Views.Video
 {
-    public class ArticleController : Controller
+    public class StatusController : Controller
     {
         private workflowEntities db = new workflowEntities();
 
         //
-        // GET: /Article/
+        // GET: /Status/
 
         public ActionResult Index()
         {
-            return View(db.ARTICLE.ToList());
+            return View(db.STATUS.ToList());
         }
 
         //
-        // GET: /Article/Details/5
+        // GET: /Status/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            STATUS status = db.STATUS.Find(id);
+            if (status == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(status);
         }
 
         //
-        // GET: /Article/Create
+        // GET: /Status/Create
 
         public ActionResult Create()
         {
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL");
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID",
-                                              "THEME_LABEL");
             return View();
         }
 
         //
-        // POST: /Article/Create
+        // POST: /Status/Create
 
         [HttpPost]
-        public ActionResult Create(ARTICLE article)
+        public ActionResult Create(STATUS status)
         {
             if (ModelState.IsValid)
             {
-                db.ARTICLE.Add(article);
+                db.STATUS.Add(status);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.THEME_ID = new SelectList(db.THEME, "THEME_ID", "THEME_LABEL", article.THEME);
-            ViewBag.THEME_ID = new SelectList(from t in db.THEME select t, "THEME_ID");
-            return View(article);
+
+            return View(status);
         }
 
         //
-        // GET: /Article/Edit/5
+        // GET: /Status/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            STATUS status = db.STATUS.Find(id);
+            if (status == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(status);
         }
 
         //
-        // POST: /Article/Edit/5
+        // POST: /Status/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ARTICLE article)
+        public ActionResult Edit(STATUS status)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(status).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(article);
+            return View(status);
         }
 
         //
-        // GET: /Article/Delete/5
+        // GET: /Status/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            if (article == null)
+            STATUS status = db.STATUS.Find(id);
+            if (status == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(status);
         }
 
         //
-        // POST: /Article/Delete/5
+        // POST: /Status/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ARTICLE article = db.ARTICLE.Find(id);
-            db.ARTICLE.Remove(article);
+            STATUS status = db.STATUS.Find(id);
+            db.STATUS.Remove(status);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
