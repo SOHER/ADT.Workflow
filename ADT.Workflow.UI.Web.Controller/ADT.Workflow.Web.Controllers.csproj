@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AccountController.cs" />
+    <Compile Include="Article\ArticleController.cs" />
     <Compile Include="Home\HomeController.cs" />
     <Compile Include="Person\PersonController.cs" />
     <Compile Include="Person_Function\FunctionController.cs" />

@@ -1,0 +1,131 @@
+﻿@model ADT.Workflow.Web.Models.ARTICLE
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ARTICLE</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ARTICLE_NBR)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ARTICLE_NBR)
+            @Html.ValidationMessageFor(model => model.ARTICLE_NBR)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AUTHOR)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AUTHOR)
+            @Html.ValidationMessageFor(model => model.AUTHOR)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SOURCES)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SOURCES)
+            @Html.ValidationMessageFor(model => model.SOURCES)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ANGLE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ANGLE)
+            @Html.ValidationMessageFor(model => model.ANGLE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TITLE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TITLE)
+            @Html.ValidationMessageFor(model => model.TITLE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TITLE_FB)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TITLE_FB)
+            @Html.ValidationMessageFor(model => model.TITLE_FB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CHAPO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CHAPO)
+            @Html.ValidationMessageFor(model => model.CHAPO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DESCRIPTION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DESCRIPTION)
+            @Html.ValidationMessageFor(model => model.DESCRIPTION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CREATION_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CREATION_DATE)
+            @Html.ValidationMessageFor(model => model.CREATION_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MODIFICATION_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MODIFICATION_DATE)
+            @Html.ValidationMessageFor(model => model.MODIFICATION_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VALIDATION_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VALIDATION_DATE)
+            @Html.ValidationMessageFor(model => model.VALIDATION_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TARGET_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor( model => model.TARGET_DATE, new {type = "date"})
+            @Html.ValidationMessageFor(model => model.TARGET_DATE)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HISTORIC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HISTORIC)
+            @Html.ValidationMessageFor(model => model.HISTORIC)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

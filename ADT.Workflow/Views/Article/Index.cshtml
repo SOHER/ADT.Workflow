@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ADT.Workflow.Web.Models.ARTICLE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ARTICLE_NBR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AUTHOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOURCES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANGLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TITLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TITLE_FB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHAPO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATION_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFICATION_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VALIDATION_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TARGET_DATE)
+        </th>
+        <th></th>
+    </tr>
+    
+    <tr >
+        <th>
+            @Html.DisplayNameFor(model => model.HISTORIC)
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARTICLE_NBR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AUTHOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOURCES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANGLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TITLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TITLE_FB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHAPO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATION_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HISTORIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFICATION_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VALIDATION_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TARGET_DATE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ARTICLE_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ARTICLE_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ARTICLE_ID })
+        </td>
+    </tr>
+}
+
+</table>

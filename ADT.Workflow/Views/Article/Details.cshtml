@@ -1,0 +1,106 @@
+﻿@model ADT.Workflow.Web.Models.ARTICLE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ARTICLE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ARTICLE_NBR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ARTICLE_NBR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AUTHOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AUTHOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SOURCES)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOURCES)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ANGLE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ANGLE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TITLE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TITLE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TITLE_FB)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TITLE_FB)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CHAPO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CHAPO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DESCRIPTION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DESCRIPTION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATION_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATION_DATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HISTORIC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HISTORIC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MODIFICATION_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MODIFICATION_DATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VALIDATION_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VALIDATION_DATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TARGET_DATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TARGET_DATE)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ARTICLE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
