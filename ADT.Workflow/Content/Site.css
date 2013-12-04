@@ -1,35 +1,33 @@
-﻿html {
-    background-color: #e2e2e2;
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+html {
+    background-color: #333;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #fff;
-    border-top: solid 10px #000;
-    color: #333;
-    font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    background-color: #333;
+    /*border-top: solid 10px #000;*/
+    color: #666A76;
+    font-size: 14px;
+    font-family: "Open Sans", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    line-height: 1.333;
+    font-size: 1em;
 }
 
 a {
-    color: #333;
+    color: #3498db;
     outline: none;
-    padding-left: 3px;
-    padding-right: 3px;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: all 0.25s ease 0s;
 }
 
-    a:link, a:visited,
-    a:active, a:hover {
-        color: #333;
-    }
-
-    a:hover {
-        background-color: #c7d1d6;
-    }
+a:hover {
+    color: #2980b9;
+}
 
 header, footer, hgroup,
 nav, section {
@@ -60,9 +58,14 @@ mark {
 
 h1, h2, h3,
 h4, h5, h6 {
-    color: #000;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    display: block;
+    letter-spacing: -1px;
+    font-weight: 300;
+    margin: 0px 0px 1rem;
+    color: #333;
+    line-height: 1.333;
+    position: relative;
+    text-align: left;
 }
 
 h1 {
@@ -94,52 +97,59 @@ h5, h6 {
 /* main layout
 ----------------------------------------------------------*/
 .content-wrapper {
-    margin: 0 auto;
-    max-width: 1170px;
+    padding-left : 20px;
 }
 
 #body {
-    background-color: #efeeef;
+    background-color: #FFF;
     clear: both;
-    padding-bottom: 35px;
+    padding : 10px 15px;
+    min-height: 500px;
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
-        padding-left: 10px;
-        padding-top: 30px;
+        /*background: url("../Images/accent.png") no-repeat;*/
+        /*padding-left: 10px;*/
+        /*padding-top: 30px;*/
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+        /*background: url("../Images/heroAccent.png") no-repeat;*/
     }
 
 header .content-wrapper {
-    padding-top: 20px; 
+    /*padding-top: 20px;*/ 
 }
 
 footer {
     clear: both;
-    background-color: #e2e2e2;
-    font-size: .8em;
+    background-color: #333;
+    font-size: .9em;
     height: 100px;
+    color : #CCC;
 }
 
 
 /* site title
 ----------------------------------------------------------*/
 .site-title {
-    color: #c8c8c8;
-    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
-    font-size: 2.3em;
+    color: #444854;
     margin: 0;
+    padding: 10px 0;
 }
 
-.site-title a, .site-title a:hover, .site-title a:active {
-    background: none;
-    color: #c8c8c8;
-    outline: none;
+.site-title a, 
+.site-title a:hover, 
+.site-title a:active {
+    line-height: 1.333;
+    text-align: left;
+    font-size: 2.5em;
+    letter-spacing: -2px;
+    font-weight: 300;
+    color: #16a085;
     text-decoration: none;
+    background-color : transparent;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -311,7 +321,11 @@ article {
 
 aside {
     float: left;
-    width: 25%;
+    min-width: 210px;
+    min-height : 500px;
+    padding: 15px 20px;
+    margin : -10px 0 -10px -35px;
+    background-color: #F2F2F3;
 }
 
     aside ul {
@@ -335,32 +349,32 @@ aside {
     width: 55%;
 }
 
-    #loginForm .validation-error {
-        display: block;
-        margin-left: 15px;
-    }
+#loginForm .validation-error {
+    display: block;
+    margin-left: 15px;
+}
 
-    #loginForm .validation-summary-errors ul {
-        margin: 0;
-        padding: 0;
-    }
+#loginForm .validation-summary-errors ul {
+    margin: 0;
+    padding: 0;
+}
 
-    #loginForm .validation-summary-errors li {
-        display: inline;
-        list-style: none;
-        margin: 0;
-    }
+#loginForm .validation-summary-errors li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+}
 
-    #loginForm input {
-        width: 250px;
-    }
+#loginForm input {
+    width: 250px;
+}
 
-    #loginForm input[type="checkbox"],
-    #loginForm input[type="submit"],
-    #loginForm input[type="button"],
-    #loginForm button {
-        width: auto;
-    }
+#loginForm input[type="checkbox"],
+#loginForm input[type="submit"],
+#loginForm input[type="button"],
+#loginForm button {
+    width: auto;
+}
 
 #socialLoginForm {
     margin-left: 40px;
@@ -416,7 +430,7 @@ fieldset {
 
 label {
     display: block;
-    font-size: 1.2em;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -424,13 +438,17 @@ label.checkbox {
     display: inline;
 }
 
-input, textarea {
-    border: 1px solid #e2e2e2;
-    background: #fff;
-    color: #333;
-    font-size: 1.2em;
-    margin: 5px 0 6px 0;
-    padding: 5px;
+select,
+input, 
+textarea {
+    border: 2px solid rgb(189, 195, 199);
+    color: rgb(52, 73, 94);
+    font-size: 15px;
+    padding: 8px 12px;
+    /*height: 42px;*/
+    border-radius: 6px;
+    box-shadow: none;
+    transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
     width: 300px;
 }
 
@@ -439,36 +457,50 @@ textarea {
     width: 500px;
 }
 
-    input:focus, textarea:focus {
-        border: 1px solid #7ac0da;
-    }
+input:focus, 
+textarea:focus {
+    border-color: #16a085;
+    outline: 0px none;
+    box-shadow: none;
+}
 
-    input[type="checkbox"] {
-        background: transparent;
-        border: inherit;
-        width: auto;
-    }
+input[type="checkbox"] {
+    background: transparent;
+    border: inherit;
+    width: auto;
+}
 
-    input[type="submit"],
-    input[type="button"],
-    button {
-        background-color: #d3dce0;
-        border: 1px solid #787878;
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 600;
-        padding: 7px;
-        margin-right: 8px;
-        width: auto;
-    }
+input[type="submit"],
+input[type="button"],
+button {
+    border: medium none;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px;
+    transition: all 0.25s linear 0s;
+    color : #FFF;
+    background-color : #16a085;
+    cursor : pointer;
+    width: auto;
+    text-transform : uppercase;
+}
 
-    td input[type="submit"],
-    td input[type="button"],
-    td button {
-        font-size: 1em;
-        padding: 4px;
-        margin-right: 4px;
-    }
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+    color: #FFF;
+    background-color: #1abc9c;
+}
+
+td input[type="submit"],
+td input[type="button"],
+td button {
+    font-size: 1em;
+    padding: 4px;
+    margin-right: 4px;
+}
 
 /* info and errors */
 .message-info {
@@ -531,14 +563,17 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     margin-top: 0.75em;
-    border: 0 none;
+    border: 2px solid #EEF0F0;
+    text-align : center;
 }
 
 th {
-    font-size: 1.2em;
-    text-align: left;
+    font-size: 1em;
+    text-align: center;
     border: none 0px;
-    padding-left: 0;
+    padding : 10px 25px;
+    vertical-align: middle;
+    border: 2px solid #EEF0F0;
 }
 
     th a {
@@ -578,8 +613,8 @@ th {
     }
 
 td {
-    padding: 0.25em 2em 0.25em 0em;
-    border: 0 none;
+    padding: 10px;
+    border: 2px solid #EEF0F0;
 }
 
 tr.pager td {
