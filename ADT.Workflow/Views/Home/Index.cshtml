@@ -1,30 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Page d'accueil";
+    ViewBag.Title = "Gestion du workflow des articles";
 }
-
 <aside>
-    <h3>Menu</h3>
+    <h2>Menu</h2>
+
     <p>Tableau de bord</p>
     <ul>
-        <li>@Html.ActionLink("Accueil", "ShowDashBoard")</li>
+        <li>@Html.ActionLink("Accueil", "ShowDashboard")</li>
     </ul>
-    <p>
-        Gestion des articles
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Ajouter un article", "AddArticle")</li>
-        <li>@Html.ActionLink("Consulter mes articles", "ShowCurrentUserArticles")</li>
-        <li>@Html.ActionLink("Historique", "ShowHistoricUserArticles")</li>
-    </ul>
-
     <p>Gestion du compte</p>
     <ul>
         <li>@Html.ActionLink("Modifier mon compte", "EditUserProfile")</li>
     </ul>
 
-    <p>Gestion des utilisateurs</p>
-    <ul>
-        <li>@Html.ActionLink("Ajouter un utilisateur", "AddUser")</li>
-        <li>@Html.ActionLink("Consulter la liste", "ShowListUsers")</li>
-    </ul>
+    @{
+        if (ViewBag.Role != null)
+        {
+            var message = "Aucun role n'est défini";
+
+            var role = (string)ViewBag.Role.ToString();
+            switch (role)
+            {
+                case "admin":
+                    @Html.Partial("menu/_adminMenuPartial");
+                    break;
+                case "author":
+                    @Html.Partial("menu/_authorMenuPartial");
+                    break;
+                case "releaser":
+                    @Html.Partial("menu/_releaserMenuPartial");
+                    break;
+                case "rewiever":
+                    @Html.Partial("menu/_rewieverMenuPartial");
+                    break;
+                default:
+                    @:Cas non géré !
+                    break;
+            }
+        } else {
+            @:Aucun role n'est défini !
+        }
+    }
 </aside>
