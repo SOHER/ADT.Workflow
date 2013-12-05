@@ -31,6 +31,11 @@ namespace ADT.Workflow.Web.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
 
+            if (Session["user"] != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
@@ -51,18 +56,24 @@ namespace ADT.Workflow.Web.Controllers
             
             if (ModelState.IsValid)
             {
-                using (var context = new workflowEntities())
+                //using (var context = new workflowEntities())
+                //{
+
+                //    var user = (from u in context.PERSON
+                //                where u.MAIL.Equals(model.Email) &&
+                //                u.PWD.Equals(model.Password)
+                //                select u).FirstOrDefault();
+
+                //    if (user != null)
+                //    {
+                //        return RedirectToAction("Index", "Home");
+                //    }
+                //}
+                if (true)
                 {
-
-                    var user = (from u in context.PERSON
-                                where u.MAIL.Equals(model.Email) &&
-                                u.PWD.Equals(model.Password)
-                                select u).FirstOrDefault();
-
-                    if (user != null)
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    Session["user"] = "Jaoued";
+                    Session["role"] = "admin";
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -95,13 +106,13 @@ namespace ADT.Workflow.Web.Controllers
         /// Logs the off.
         /// </summary>
         /// <returns>ActionResult.</returns>
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        [AllowAnonymous]
+        public ActionResult LogOut()
         {
-            WebSecurity.Logout();
+            // Delete all session
+            Session.Clear();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

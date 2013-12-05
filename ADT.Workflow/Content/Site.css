@@ -1,6 +1,4 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
-html {
+﻿html {
     background-color: #333;
     margin: 0;
     padding: 0;
@@ -11,7 +9,7 @@ body {
     /*border-top: solid 10px #000;*/
     color: #666A76;
     font-size: 14px;
-    font-family: "Open Sans", Verdana, Helvetica, Sans-Serif;
+    font-family: "Helvetica Neue", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
     line-height: 1.333;
@@ -339,7 +337,7 @@ aside {
         }
 
 .label {
-    font-weight: 700;
+    /*font-weight: 700;*/
 }
 
 /* login page */
@@ -431,7 +429,7 @@ fieldset {
 label {
     display: block;
     font-size: 14px;
-    font-weight: 600;
+    /*font-weight: 600;*/
 }
 
 label.checkbox {
