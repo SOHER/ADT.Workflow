@@ -6,7 +6,7 @@
 
     <p>Tableau de bord</p>
     <ul>
-        <li>@Html.ActionLink("Accueil", "ShowDashboard")</li>
+        <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
     </ul>
     <p>Gestion du compte</p>
     <ul>
@@ -16,9 +16,9 @@
     @{
         if (ViewBag.Role != null)
         {
-            var message = "Aucun role n'est défini";
 
             var role = (string)ViewBag.Role.ToString();
+            
             switch (role)
             {
                 case "admin":
