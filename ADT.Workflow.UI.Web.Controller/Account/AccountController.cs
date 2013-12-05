@@ -49,9 +49,21 @@ namespace ADT.Workflow.Web.Controllers
         public ActionResult Login(LoginModel model, string returnUrl)
         {
             
-            if (ModelState.IsValid && WebSecurity.Login(model.Email, model.Password, persistCookie: model.RememberMe))
+            if (ModelState.IsValid)
             {
-                return RedirectToLocal(returnUrl);
+                using (var context = new workflowEntities())
+                {
+
+                    var user = (from u in context.PERSON
+                                where u.MAIL.Equals(model.Email) &&
+                                u.PWD.Equals(model.Password)
+                                select u).FirstOrDefault();
+
+                    if (user != null)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
             }
 
             // If we got this far, something failed, redisplay form
