@@ -166,6 +166,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Account\ArticleController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ADT.Workflow.csproj.GhostDoc.xml" />
@@ -320,11 +321,6 @@
     <Content Include="Views\Team\Create.cshtml" />
     <Content Include="Views\Team\Edit.cshtml" />
     <Content Include="Views\Team\Delete.cshtml" />
-    <Content Include="Views\Article\Index.cshtml" />
-    <Content Include="Views\Article\Details.cshtml" />
-    <Content Include="Views\Article\Create.cshtml" />
-    <Content Include="Views\Article\Edit.cshtml" />
-    <Content Include="Views\Article\Delete.cshtml" />
     <Content Include="Views\Theme\Index.cshtml" />
     <Content Include="Views\Theme\Details.cshtml" />
     <Content Include="Views\Theme\Create.cshtml" />
@@ -355,6 +351,11 @@
     <Content Include="Views\Status\Create.cshtml" />
     <Content Include="Views\Status\Edit.cshtml" />
     <Content Include="Views\Status\Delete.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Article\Details.cshtml" />
+    <Content Include="Views\Article\Create.cshtml" />
+    <Content Include="Views\Article\Edit.cshtml" />
+    <Content Include="Views\Article\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

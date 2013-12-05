@@ -39,24 +39,21 @@
             @Html.DisplayNameFor(model => model.CREATION_DATE)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.HISTORIC)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.MODIFICATION_DATE)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.THEME)
+            @Html.DisplayNameFor(model => model.VALIDATION_DATE)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TARGET_DATE)
         </th>
         <th></th>
     </tr>
-    
-    <tr >
-        <th>
-            @Html.DisplayNameFor(model => model.HISTORIC)
-        </th>
-    </tr>
 
-    @foreach (var item in Model) {
+@foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.ARTICLE_NBR)
@@ -92,22 +89,7 @@
             @Html.DisplayFor(modelItem => item.MODIFICATION_DATE)
         </td>
         <td>
-            @* @foreach (var t in item.THEME )
-             {
-                 if (t != null)
-                 {
-                @Html.DisplayFor(modelItem => t)                 
-             
-                }
-             }*@
-             @foreach (var t in item.THEME )
-             {
-
-                @Html.DisplayText("test")               
-             
-                
-             }
-            
+            @Html.DisplayFor(modelItem => item.VALIDATION_DATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TARGET_DATE)

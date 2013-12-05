@@ -7,13 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class TEAM
     {
@@ -22,8 +19,6 @@ namespace ADT.Workflow.Web.Models
             this.PERSON = new HashSet<PERSON>();
         }
     
-        [Key]
-        [Required]
         public int TEAM_ID { get; set; }
         public string TEAM_LABEL { get; set; }
     

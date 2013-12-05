@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class FUNCTION
     {
         public FUNCTION()
@@ -21,7 +19,6 @@ namespace ADT.Workflow.Web.Models
             this.PERSON = new HashSet<PERSON>();
         }
     
-        [Key]
         public int FUNCTION_ID { get; set; }
         public string FUNCTION_LABEL { get; set; }
     

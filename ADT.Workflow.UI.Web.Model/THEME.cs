@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class THEME
     {
         public THEME()
@@ -21,7 +19,6 @@ namespace ADT.Workflow.Web.Models
             this.ARTICLE = new HashSet<ARTICLE>();
         }
     
-        [Key]
         public int THEME_ID { get; set; }
         public string THEME_LABEL { get; set; }
     

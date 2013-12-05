@@ -12,7 +12,6 @@ namespace ADT.Workflow.Web.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.ModelConfiguration.Conventions;
     
     public partial class workflowEntities : DbContext
     {
@@ -23,23 +22,16 @@ namespace ADT.Workflow.Web.Models
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //throw new UnintentionalCodeFirstException();
-
-
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            throw new UnintentionalCodeFirstException();
         }
     
         public DbSet<ARTICLE> ARTICLE { get; set; }
-        public DbSet<FILE> FILE { get; set; }
-        public DbSet<FILE_TYPE> FILE_TYPE { get; set; }
         public DbSet<FUNCTION> FUNCTION { get; set; }
         public DbSet<HISTORIC> HISTORIC { get; set; }
-        public DbSet<IMG> IMG { get; set; }
         public DbSet<PERSON> PERSON { get; set; }
         public DbSet<ROLE> ROLE { get; set; }
         public DbSet<STATUS> STATUS { get; set; }
         public DbSet<TEAM> TEAM { get; set; }
         public DbSet<THEME> THEME { get; set; }
-        public DbSet<VIDEO> VIDEO { get; set; }
     }
 }

@@ -27,15 +27,6 @@
             @Html.EditorFor(model => model.AUTHOR)
             @Html.ValidationMessageFor(model => model.AUTHOR)
         </div>
-        
-                <div class="editor-label">
-            @Html.LabelFor(model => model.THEME)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("THEME_ID", 
-                      (SelectList)(ViewData["THEME"]), "--Choisir --")
-            @Html.ValidationMessageFor(model => model.THEME)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.SOURCES)
@@ -94,6 +85,14 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.HISTORIC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HISTORIC)
+            @Html.ValidationMessageFor(model => model.HISTORIC)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.MODIFICATION_DATE)
         </div>
         <div class="editor-field">
@@ -113,16 +112,8 @@
             @Html.LabelFor(model => model.TARGET_DATE)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor( model => model.TARGET_DATE, new {type = "date"})
+            @Html.EditorFor(model => model.TARGET_DATE)
             @Html.ValidationMessageFor(model => model.TARGET_DATE)
-        </div>
-        
-        <div class="editor-label">
-            @Html.LabelFor(model => model.HISTORIC)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.HISTORIC)
-            @Html.ValidationMessageFor(model => model.HISTORIC)
         </div>
 
         <p>

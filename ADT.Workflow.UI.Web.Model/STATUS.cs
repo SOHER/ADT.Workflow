@@ -7,13 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace ADT.Workflow.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
     
     public partial class STATUS
     {
@@ -22,10 +19,9 @@ namespace ADT.Workflow.Web.Models
             this.HISTORIC = new HashSet<HISTORIC>();
         }
     
-        [Key]
         public int STATUS_ID { get; set; }
         public string STATUS_LABEL { get; set; }
-
+    
         public virtual ICollection<HISTORIC> HISTORIC { get; set; }
     }
 }
